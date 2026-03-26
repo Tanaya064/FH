@@ -6,7 +6,7 @@ import Section5Testimonials from "@/components/sections/Section5Testimonials";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen pt-[72px]">
+    <main className="flex flex-col min-h-screen">
       <Section1Hero />
       <Section2Story />
       <Section3Menu />

@@ -13,25 +13,21 @@ const menuItems = [
 
 export default function Section3Menu() {
     return (
-        <section id="menu" className="py-20 lg:py-28 bg-[#fdf6e9]">
+        <section id="menu" className="py-16 lg:py-20" style={{ background: "var(--bg)" }}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
                     <div>
-                        <span className="text-primary-600 font-bold tracking-widest uppercase text-xs mb-3 block">Featured Items</span>
-                        <h2 className="text-4xl sm:text-5xl font-bold text-neutral-900 font-[family-name:var(--font-heading)] leading-tight">
+                        <span className="font-bold tracking-widest uppercase text-xs mb-3 block" style={{ color: "var(--accent)" }}>Featured Items</span>
+                        <h2 className="text-4xl sm:text-5xl font-bold font-[family-name:var(--font-heading)] leading-tight" style={{ color: "var(--fg)" }}>
                             A Taste of Fuel HQ.
                         </h2>
                     </div>
-                    <Link
-                        href="/menu"
-                        className="hidden sm:inline-flex items-center gap-2 text-primary-600 font-bold text-sm tracking-wide hover:text-primary-700 transition-colors group"
-                    >
-                        View Full Menu
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <Link href="/menu" className="hidden sm:inline-flex items-center gap-2 font-bold text-sm tracking-wide transition-colors group" style={{ color: "var(--accent)" }}>
+                        View Full Menu <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {menuItems.map((item, idx) => (
                         <motion.div
                             key={idx}
@@ -39,35 +35,26 @@ export default function Section3Menu() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-40px" }}
                             transition={{ delay: idx * 0.08 }}
-                            className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group border border-primary-100"
+                            className="rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group border"
+                            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
                         >
-                            <div className="relative h-48 overflow-hidden">
-                                <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                />
-                                <div className="absolute top-3 left-3 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            <div className="relative h-44 overflow-hidden">
+                                <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                <div className="absolute top-3 left-3 text-xs font-bold px-3 py-1 rounded-full" style={{ background: "var(--accent)", color: "var(--accent-text)" }}>
                                     {item.tag}
                                 </div>
                             </div>
-                            <div className="p-5">
-                                <h3 className="font-bold text-neutral-900 font-[family-name:var(--font-heading)] text-lg mb-1.5 leading-snug">
-                                    {item.title}
-                                </h3>
-                                <p className="text-neutral-500 text-sm leading-relaxed">{item.desc}</p>
+                            <div className="p-4">
+                                <h3 className="font-bold font-[family-name:var(--font-heading)] text-base mb-1.5 leading-snug" style={{ color: "var(--fg)" }}>{item.title}</h3>
+                                <p className="text-sm leading-relaxed" style={{ color: "var(--fg-muted)" }}>{item.desc}</p>
                             </div>
                         </motion.div>
                     ))}
                 </div>
 
-                <div className="mt-8 sm:hidden">
-                    <Link
-                        href="/menu"
-                        className="flex items-center justify-center gap-2 w-full py-3.5 border-2 border-primary-600 text-primary-700 font-bold text-sm tracking-wide rounded-full hover:bg-primary-50 transition-colors group"
-                    >
-                        View Full Menu
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <div className="mt-7 sm:hidden">
+                    <Link href="/menu" className="flex items-center justify-center gap-2 w-full py-3 border-2 font-bold text-sm tracking-wide rounded-full transition-colors group" style={{ borderColor: "var(--accent)", color: "var(--accent)" }}>
+                        View Full Menu <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </div>
             </div>

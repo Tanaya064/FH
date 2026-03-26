@@ -1,56 +1,68 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Western Cafe Warm Palette */
-  --color-primary-50: #fdf8f0;
-  --color-primary-100: #faefd8;
-  --color-primary-200: #f3d9a8;
-  --color-primary-300: #e8bc72;
-  --color-primary-400: #d99a3e;
-  --color-primary-500: #c47f22;
-  --color-primary-600: #a8641a;
-  --color-primary-700: #8a4d18;
-  --color-primary-800: #6e3d1a;
-  --color-primary-900: #5a3219;
-  --color-primary-950: #2e180a;
-
-  --color-accent: #c47f22;
-  --color-espresso: #3b1f0e;
-  --color-cream: #fdf6e9;
-  --color-sage: #7a8c6e;
-
-  --color-neutral-950: #1a0f07;
-  --color-neutral-900: #2c1a0e;
-  --color-neutral-800: #3d2510;
-  --color-neutral-700: #5a3a1a;
-  --color-neutral-600: #7a5230;
-  --color-neutral-500: #9a7050;
-  --color-neutral-400: #b89070;
-  --color-neutral-300: #d4b898;
-  --color-neutral-200: #e8d8c4;
-  --color-neutral-100: #f4ece0;
-  --color-neutral-50: #fdf8f2;
-
   --font-heading: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* ── Light mode (default) ── */
 :root {
-  --background: #fdf6e9;
-  --foreground: #2c1a0e;
+  --bg: #fdf6e9;
+  --bg-card: #ffffff;
+  --bg-nav: rgba(253,246,233,0.96);
+  --bg-section-alt: #ffffff;
+  --fg: #2c1a0e;
+  --fg-muted: #7a5230;
+  --fg-subtle: #9a7050;
+  --border: #e8d8c4;
+  --accent: #a8641a;
+  --accent-text: #ffffff;
+}
+
+/* ── Dark mode (Game of Thrones) ── */
+html.dark {
+  --bg: #0b0c0e;
+  --bg-card: #13151a;
+  --bg-nav: rgba(11,12,14,0.96);
+  --bg-section-alt: #0f1115;
+  --fg: #e8d7b3;
+  --fg-muted: #a7aab8;
+  --fg-subtle: #7d8196;
+  --border: #282a33;
+  --accent: #c39c59;
+  --accent-text: #0b0c0e;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg);
+  color: var(--fg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background 0.35s ease, color 0.35s ease;
 }
 
-.text-heading {
-  font-family: var(--font-heading);
+/* ── Fork & Spoon loader ── */
+@keyframes forkSwing {
+  0%   { transform: rotate(-25deg); }
+  50%  { transform: rotate(10deg); }
+  100% { transform: rotate(-25deg); }
+}
+@keyframes spoonSwing {
+  0%   { transform: rotate(25deg); }
+  50%  { transform: rotate(-10deg); }
+  100% { transform: rotate(25deg); }
 }
 
+.animate-fork {
+  animation: forkSwing 0.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+.animate-spoon {
+  animation: spoonSwing 0.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* ── Scrollbar hide ── */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;

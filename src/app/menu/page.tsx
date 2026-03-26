@@ -138,33 +138,34 @@ export default function MenuPage() {
     };
 
     return (
-        <main className="min-h-screen bg-[#fdf6e9]">
+        <main className="min-h-screen" style={{ background: "var(--bg)" }}>
             {/* Page Header */}
-            <div className="bg-white border-b border-primary-100 pt-24 pb-10">
+            <div className="border-b pt-16 pb-8" style={{ background: "var(--bg-section-alt)", borderColor: "var(--border)" }}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <span className="text-primary-600 font-bold tracking-widest uppercase text-xs mb-3 block">Our Complete Menu</span>
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 font-[family-name:var(--font-heading)] leading-tight mb-4">
+                    <span className="font-bold tracking-widest uppercase text-xs mb-3 block" style={{ color: "var(--accent)" }}>Our Complete Menu</span>
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-[family-name:var(--font-heading)] leading-tight mb-4" style={{ color: "var(--fg)" }}>
                         Full Menu
                     </h1>
-                    <p className="text-neutral-500 max-w-xl mx-auto text-base">
+                    <p className="max-w-xl mx-auto text-base" style={{ color: "var(--fg-muted)" }}>
                         From spicy starters to loaded pizzas, comforting Maggi bowls, and refreshing beverages — there's something for everyone.
                     </p>
                 </div>
             </div>
 
             {/* Sticky Category Tabs */}
-            <div className="sticky top-[60px] z-30 bg-[#fdf6e9]/95 backdrop-blur-md border-b border-primary-200 shadow-sm">
+            <div className="sticky top-[56px] z-30 backdrop-blur-md shadow-sm" style={{ background: "var(--bg-nav)", borderBottom: "1px solid var(--border)" }}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex overflow-x-auto gap-2 py-3 scrollbar-hide">
                         {menuCategories.map((cat, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => scrollToCategory(idx)}
-                                className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border ${
-                                    activeCategory === idx
-                                        ? "bg-primary-600 border-primary-600 text-white shadow-sm"
-                                        : "bg-white border-primary-200 text-neutral-600 hover:border-primary-400 hover:text-primary-700"
-                                }`}
+                                className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border"
+                                style={{
+                                    background: activeCategory === idx ? "var(--accent)" : "var(--bg-card)",
+                                    borderColor: activeCategory === idx ? "var(--accent)" : "var(--border)",
+                                    color: activeCategory === idx ? "var(--accent-text)" : "var(--fg-muted)",
+                                }}
                             >
                                 <span>{cat.emoji}</span>
                                 {cat.name}
@@ -181,10 +182,10 @@ export default function MenuPage() {
                         {/* Category Header */}
                         <div className="flex items-center gap-3 mb-6">
                             <span className="text-3xl">{category.emoji}</span>
-                            <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 font-[family-name:var(--font-heading)]">
+                            <h2 className="text-2xl sm:text-3xl font-bold font-[family-name:var(--font-heading)]" style={{ color: "var(--fg)" }}>
                                 {category.name}
                             </h2>
-                            <div className="flex-1 h-px bg-primary-200 ml-2" />
+                            <div className="flex-1 h-px ml-2" style={{ background: "var(--border)" }} />
                         </div>
 
                         {/* Items Grid */}
@@ -192,10 +193,11 @@ export default function MenuPage() {
                             {category.items.map((item, idy) => (
                                 <div
                                     key={idy}
-                                    className="bg-white rounded-2xl overflow-hidden border border-primary-100 hover:shadow-md transition-shadow group flex flex-col"
+                                    className="rounded-2xl overflow-hidden hover:shadow-md transition-shadow group flex flex-col border"
+                                    style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
                                 >
                                     {/* Image */}
-                                    <div className="relative h-44 sm:h-48 overflow-hidden bg-primary-50">
+                                    <div className="relative h-44 sm:h-48 overflow-hidden" style={{ background: "var(--bg)" }}>
                                         <img
                                             src={item.image}
                                             alt={item.name}
@@ -203,9 +205,13 @@ export default function MenuPage() {
                                             loading="lazy"
                                         />
                                         {item.tag && (
-                                            <div className={`absolute top-3 left-3 text-white text-[11px] font-bold px-2.5 py-1 rounded-full ${
-                                                item.tag === "Bestseller" ? "bg-primary-600" : "bg-neutral-700"
-                                            }`}>
+                                            <div
+                                                className="absolute top-3 left-3 text-[11px] font-bold px-2.5 py-1 rounded-full"
+                                                style={{
+                                                    background: item.tag === "Bestseller" ? "var(--accent)" : "rgba(0,0,0,0.65)",
+                                                    color: "var(--accent-text)",
+                                                }}
+                                            >
                                                 {item.tag}
                                             </div>
                                         )}
@@ -214,12 +220,12 @@ export default function MenuPage() {
                                     {/* Info */}
                                     <div className="p-4 flex flex-col flex-grow">
                                         <div className="flex items-start justify-between gap-2 mb-1.5">
-                                            <h3 className="font-bold text-neutral-900 font-[family-name:var(--font-heading)] text-base leading-snug flex-1">
+                                            <h3 className="font-bold font-[family-name:var(--font-heading)] text-base leading-snug flex-1" style={{ color: "var(--fg)" }}>
                                                 {item.name}
                                             </h3>
-                                            <span className="text-primary-600 font-bold text-sm whitespace-nowrap">{item.price}</span>
+                                            <span className="font-bold text-sm whitespace-nowrap" style={{ color: "var(--accent)" }}>{item.price}</span>
                                         </div>
-                                        <p className="text-neutral-500 text-sm leading-relaxed flex-grow">{item.desc}</p>
+                                        <p className="text-sm leading-relaxed flex-grow" style={{ color: "var(--fg-muted)" }}>{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
@@ -228,13 +234,14 @@ export default function MenuPage() {
                 ))}
 
                 {/* Order CTA */}
-                <div className="py-12 text-center border-t border-primary-200">
-                    <p className="text-neutral-500 mb-5 text-base">Can't make it to the cafe? Order your favorites online!</p>
+                <div className="py-12 text-center border-t" style={{ borderColor: "var(--border)" }}>
+                    <p className="mb-5 text-base" style={{ color: "var(--fg-muted)" }}>Can't make it to the cafe? Order your favorites online!</p>
                     <a
                         href="https://www.swiggy.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block px-8 py-3.5 bg-primary-600 hover:bg-primary-700 text-white font-bold text-sm tracking-wide rounded-full transition-colors"
+                        className="inline-block px-8 py-3.5 font-bold text-sm tracking-wide rounded-full transition-colors"
+                        style={{ background: "var(--accent)", color: "var(--accent-text)" }}
                     >
                         Order on Swiggy
                     </a>

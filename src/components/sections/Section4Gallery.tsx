@@ -13,16 +13,16 @@ const galleryItems = [
 
 export default function Section4Gallery() {
     return (
-        <section id="gallery" className="py-20 lg:py-28 bg-white">
+        <section id="gallery" className="py-16 lg:py-20" style={{ background: "var(--bg-section-alt)" }}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                    <span className="text-primary-600 font-bold tracking-widest uppercase text-xs mb-3 block">Photo Gallery</span>
-                    <h2 className="text-4xl sm:text-5xl font-bold text-neutral-900 font-[family-name:var(--font-heading)] leading-tight">
+                <div className="text-center mb-10">
+                    <span className="font-bold tracking-widest uppercase text-xs mb-3 block" style={{ color: "var(--accent)" }}>Photo Gallery</span>
+                    <h2 className="text-4xl sm:text-5xl font-bold font-[family-name:var(--font-heading)] leading-tight" style={{ color: "var(--fg)" }}>
                         Where Memories Are Made.
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[180px] md:auto-rows-[200px]">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[160px] md:auto-rows-[190px]">
                     {galleryItems.map((item, idx) => (
                         <motion.div
                             key={idx}
@@ -32,12 +32,8 @@ export default function Section4Gallery() {
                             transition={{ delay: idx * 0.08 }}
                             className={`rounded-2xl overflow-hidden group relative ${item.span}`}
                         >
-                            <img
-                                src={item.image}
-                                alt={item.label}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                            />
-                            <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/30 transition-colors rounded-2xl flex items-end p-4">
+                            <img src={item.image} alt={item.label} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                            <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/40 transition-colors rounded-2xl flex items-end p-4">
                                 <span className="text-white font-bold text-sm font-[family-name:var(--font-heading)] opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
                                     {item.label}
                                 </span>
