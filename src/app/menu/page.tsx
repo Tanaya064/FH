@@ -16,27 +16,9 @@ interface MenuCategory {
     items: MenuItem[];
 }
 
-// Image identity verification key (what each URL actually shows):
-// b75/e23d... = Manchow Soup          | a23/db35... = Crispy Corn
-// 7aa/9a35... = Pepper Paneer+broccoli | 423/6f90... = Chilly Paneer
-// 670/9e7c... = Pepper Paneer platter  | 84c/281e... = Manchurian bowl
-// da4/527d... = Honey Chilli Potato    | 929/12ec... = Manchurian Dry
-// b74/c927... = Margarita Pizza        | faa/1a8b... = Farm Fresh Pizza
-// 157/3a96... = Paneer Tikka Pizza     | fc5/fcb3... = Paneer Tikka Pizza alt
-// cf0/6c91... = Crispy Chicken Strips  | b3a/5978... = Chicken Pizza
-// 378/4d2e... = Penne Pasta            | 222/e92d... = Pasta + Garlic Bread
-// 51f/07af... = Egg Fried Rice         | fa3/dbf6... = Manchow Soup
-// 78c/366d... = Pepper Chicken boat    | 4ac/3cb7... = Honey Chilli Potato alt
-// 1c9/2a4f... = Pepper Chicken skillet | 8f6/5cab... = Chicken Lollipop
-// 89c/a386... = Manchurian Dry bowl    | fb4/59d9... = Chilli Paneer+dips
-// 0ab/558b... = Pasta + Garlic Bread   | c26/f1f0... = Cheesy Loaded Fries
-// c48/aec5... = Mac & Cheese + Bread   | 6eb/3ac5... = Cheesy Loaded Fries
-// d94/b491... = Egg Masala             | a5a/e3af... = Sweet Corn Soup
-// 97e/64b6... = Manchow Soup           | 811/215d... = Manchurian Gravy
-
 const menuCategories: MenuCategory[] = [
     {
-        name: "Appetizers & Starters",
+        name: "Starters",
         emoji: "🍢",
         items: [
             { name: "Pepper Chicken", price: "₹220", desc: "Spicy and peppery chicken bites tossed with fresh curry leaves and green chillies.", image: "https://b.zmtcdn.com/data/dish_photos/78c/366da1a6ffd3b7b734c518f71879878c.jpeg", tag: "Bestseller" },
@@ -48,7 +30,7 @@ const menuCategories: MenuCategory[] = [
         ]
     },
     {
-        name: "Burgers & Sandwiches",
+        name: "Burgers",
         emoji: "🍔",
         items: [
             { name: "Chicken Tikki Cheese Burger", price: "₹210", desc: "Juicy chicken tikka patty topped with melted cheese, lettuce, and special sauce.", image: "https://b.zmtcdn.com/data/dish_photos/66e/a4df57321afafd226b6f6df87f1ef66e.jpeg", tag: "Bestseller" },
@@ -60,7 +42,7 @@ const menuCategories: MenuCategory[] = [
         ]
     },
     {
-        name: "Pizzas & Pasta",
+        name: "Pizza & Pasta",
         emoji: "🍕",
         items: [
             { name: "Margarita Pizza", price: "₹285", desc: "Classic pizza with fresh mozzarella, tomato sauce, and fragrant basil.", image: "https://b.zmtcdn.com/data/dish_photos/b74/c9270c846125962887ef8bc2fafc3b74.jpg" },
@@ -74,7 +56,7 @@ const menuCategories: MenuCategory[] = [
         ]
     },
     {
-        name: "Rice, Noodles & Biryani",
+        name: "Rice & Noodles",
         emoji: "🍜",
         items: [
             { name: "Singapuri Rice", price: "₹180", desc: "Fragrant rice stir-fried with vegetables in a signature Singaporean sauce.", image: "https://b.zmtcdn.com/data/dish_photos/ba0/d192d28bf00e27f5b6111296ee37aba0.jpeg" },
@@ -88,7 +70,7 @@ const menuCategories: MenuCategory[] = [
         ]
     },
     {
-        name: "Maggi & Omelettes",
+        name: "Maggi & Eggs",
         emoji: "🍳",
         items: [
             { name: "Chicken Maggi", price: "₹170", desc: "India's favorite noodles loaded with juicy chicken bits.", image: "https://b.zmtcdn.com/data/dish_photos/2ac/6a2b698c1a61e3dc8e45ce73da8392ac.jpeg", tag: "Bestseller" },
@@ -98,12 +80,12 @@ const menuCategories: MenuCategory[] = [
             { name: "Tadka Maggi", price: "₹140", desc: "Classic Maggi with a desi tadka of onions, tomatoes, and spices.", image: "https://b.zmtcdn.com/data/dish_photos/2ac/6a2b698c1a61e3dc8e45ce73da8392ac.jpeg" },
             { name: "Masala Maggi", price: "₹130", desc: "The OG street-style Maggi with extra masala punch.", image: "https://b.zmtcdn.com/data/dish_photos/2ac/6a2b698c1a61e3dc8e45ce73da8392ac.jpeg" },
             { name: "Masala Omelette", price: "₹140", desc: "Fluffy omelette loaded with onions, tomatoes, and green chillies.", image: "https://b.zmtcdn.com/data/dish_photos/68f/0bfd9b64eda13a1836dcb6534b7e568f.jpg" },
-            { name: "Fuel Cream And Cheese Omelette", price: "₹140", desc: "Our signature omelette filled with cream cheese and herbs.", image: "https://b.zmtcdn.com/data/dish_photos/68f/0bfd9b64eda13a1836dcb6534b7e568f.jpg" },
+            { name: "Fuel Cream & Cheese Omelette", price: "₹140", desc: "Our signature omelette filled with cream cheese and herbs.", image: "https://b.zmtcdn.com/data/dish_photos/68f/0bfd9b64eda13a1836dcb6534b7e568f.jpg" },
             { name: "Minty Sausage Roulade", price: "₹170", desc: "Savory sausage rolled with fresh mint and spices, grilled to perfection.", image: "https://b.zmtcdn.com/data/dish_photos/6eb/3ac5cf3942caf0cfa4bd9404ea3086eb.jpeg" },
         ]
     },
     {
-        name: "Sides, Soups & Salads",
+        name: "Sides & Soups",
         emoji: "🥗",
         items: [
             { name: "Classic Nachos", price: "₹170", desc: "Crispy tortilla chips with melted cheese, salsa, and jalapeños.", image: "https://b.zmtcdn.com/data/dish_photos/c26/f1f01ca89eb3cad0e22ea51e65ed0c26.jpg", tag: "Popular" },
@@ -145,131 +127,119 @@ const menuCategories: MenuCategory[] = [
 export default function MenuPage() {
     const [activeCategory, setActiveCategory] = useState(0);
 
+    const scrollToCategory = (idx: number) => {
+        setActiveCategory(idx);
+        const el = document.getElementById(`category-${idx}`);
+        if (el) {
+            const offset = 130;
+            const top = el.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: "smooth" });
+        }
+    };
+
     return (
-        <main className="min-h-screen bg-neutral-950 text-primary-100 flex flex-col font-sans">
+        <main className="min-h-screen bg-[#fdf6e9]">
+            {/* Page Header */}
+            <div className="bg-white border-b border-primary-100 pt-24 pb-10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <span className="text-primary-600 font-bold tracking-widest uppercase text-xs mb-3 block">Our Complete Menu</span>
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 font-[family-name:var(--font-heading)] leading-tight mb-4">
+                        Full Menu
+                    </h1>
+                    <p className="text-neutral-500 max-w-xl mx-auto text-base">
+                        From spicy starters to loaded pizzas, comforting Maggi bowls, and refreshing beverages — there's something for everyone.
+                    </p>
+                </div>
+            </div>
 
-            <div className="flex-grow pt-32 pb-24">
+            {/* Sticky Category Tabs */}
+            <div className="sticky top-[60px] z-30 bg-[#fdf6e9]/95 backdrop-blur-md border-b border-primary-200 shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    {/* Header */}
-                    <div className="text-center mb-12">
-                        <span className="text-primary-400 font-bold tracking-widest uppercase text-sm mb-4 block drop-shadow-sm">
-                            Our Complete Menu
-                        </span>
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6 font-[family-name:var(--font-heading)] leading-tight uppercase tracking-widest text-shadow-sm">
-                            Full <span className="text-accent italic drop-shadow-[0_0_15px_rgba(139,0,0,0.8)]">Menu.</span>
-                        </h1>
-                        <p className="max-w-2xl mx-auto text-lg text-neutral-400 font-light drop-shadow-sm">
-                            Explore everything Fuel Headquarters has to offer — from spicy starters to loaded pizzas, comforting Maggi bowls, and refreshing beverages.
-                        </p>
-                    </div>
-
-                    {/* Category Tabs - Horizontal scrollable */}
-                    <div className="mb-16 sticky top-[64px] z-30 bg-neutral-950/95 backdrop-blur-md py-4 -mx-4 px-4 border-b border-primary-900/50">
-                        <div className="flex overflow-x-auto gap-2 pb-2 scrollbar-hide max-w-7xl mx-auto">
-                            {menuCategories.map((cat, idx) => (
-                                <button
-                                    key={idx}
-                                    onClick={() => {
-                                        setActiveCategory(idx);
-                                        document.getElementById(`category-${idx}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
-                                    }}
-                                    className={`flex items-center gap-2 px-5 py-2.5 rounded-sm text-xs font-bold uppercase tracking-widest whitespace-nowrap transition-all border ${
-                                        activeCategory === idx
-                                            ? "bg-accent/20 border-accent text-accent shadow-[0_0_15px_rgba(139,0,0,0.3)]"
-                                            : "bg-neutral-900 border-primary-800/50 text-primary-300 hover:bg-neutral-800 hover:border-primary-600"
-                                    }`}
-                                >
-                                    <span className="text-base">{cat.emoji}</span>
-                                    {cat.name}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Menu Sections */}
-                    <div className="space-y-20">
-                        {menuCategories.map((category, idx) => (
-                            <section key={idx} id={`category-${idx}`} className="relative scroll-mt-36">
-                                {/* Decorative divider */}
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-primary-800 to-transparent"></div>
-
-                                {/* Category Header */}
-                                <div className="flex items-center justify-center gap-4 mt-8 mb-10">
-                                    <div className="h-px flex-1 max-w-24 bg-gradient-to-r from-transparent to-primary-700"></div>
-                                    <h2 className="text-2xl md:text-3xl font-bold text-primary-200 font-[family-name:var(--font-heading)] uppercase tracking-wider flex items-center gap-3">
-                                        <span className="text-3xl">{category.emoji}</span>
-                                        {category.name}
-                                    </h2>
-                                    <div className="h-px flex-1 max-w-24 bg-gradient-to-l from-transparent to-primary-700"></div>
-                                </div>
-
-                                {/* Menu Items Grid */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                                    {category.items.map((item, idy) => (
-                                        <div
-                                            key={idy}
-                                            className="group bg-neutral-900 rounded-sm overflow-hidden border border-primary-800/50 hover:border-accent/50 transition-all duration-300 hover:shadow-[0_10px_40px_rgba(139,0,0,0.15)] flex flex-col"
-                                        >
-                                            {/* Food Image */}
-                                            <div className="relative h-48 overflow-hidden bg-neutral-800">
-                                                <img
-                                                    src={item.image}
-                                                    alt={item.name}
-                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-[0.85] group-hover:brightness-100"
-                                                    loading="lazy"
-                                                />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent opacity-80"></div>
-
-                                                {/* Price Badge */}
-                                                <div className="absolute bottom-3 right-3 bg-neutral-950/90 backdrop-blur-sm border border-accent/50 rounded-sm px-3 py-1.5">
-                                                    <span className="text-accent font-bold tracking-wider text-sm drop-shadow-[0_0_8px_rgba(139,0,0,0.8)]">
-                                                        {item.price}
-                                                    </span>
-                                                </div>
-
-                                                {/* Tag Badge */}
-                                                {item.tag && (
-                                                    <div className={`absolute top-3 left-3 rounded-sm px-2.5 py-1 text-xs font-bold uppercase tracking-widest ${
-                                                        item.tag === "Bestseller"
-                                                            ? "bg-accent/90 text-white"
-                                                            : "bg-primary-500/90 text-white"
-                                                    }`}>
-                                                        {item.tag}
-                                                    </div>
-                                                )}
-                                            </div>
-
-                                            {/* Food Info */}
-                                            <div className="p-5 flex-grow flex flex-col">
-                                                <h3 className="text-lg font-bold text-primary-100 font-[family-name:var(--font-heading)] uppercase tracking-wider group-hover:text-primary-400 transition-colors mb-2">
-                                                    {item.name}
-                                                </h3>
-                                                <p className="text-neutral-500 font-light text-sm leading-relaxed flex-grow">
-                                                    {item.desc}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </section>
+                    <div className="flex overflow-x-auto gap-2 py-3 scrollbar-hide">
+                        {menuCategories.map((cat, idx) => (
+                            <button
+                                key={idx}
+                                onClick={() => scrollToCategory(idx)}
+                                className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all border ${
+                                    activeCategory === idx
+                                        ? "bg-primary-600 border-primary-600 text-white shadow-sm"
+                                        : "bg-white border-primary-200 text-neutral-600 hover:border-primary-400 hover:text-primary-700"
+                                }`}
+                            >
+                                <span>{cat.emoji}</span>
+                                {cat.name}
+                            </button>
                         ))}
-                    </div>
-
-                    {/* Order CTA */}
-                    <div className="mt-24 pt-12 border-t border-primary-900 text-center">
-                        <p className="text-neutral-400 font-light mb-6 text-lg">Can&apos;t make it to the cafe? Order your favorites online!</p>
-                        <a
-                            href="https://www.swiggy.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block px-10 py-4 bg-accent hover:bg-neutral-950 border border-accent text-white rounded-none font-bold text-lg uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(139,0,0,0.4)] hover:shadow-[0_0_30px_rgba(139,0,0,0.6)]"
-                        >
-                            Order on Swiggy
-                        </a>
                     </div>
                 </div>
             </div>
 
+            {/* Menu Content */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-14">
+                {menuCategories.map((category, idx) => (
+                    <section key={idx} id={`category-${idx}`} className="scroll-mt-36">
+                        {/* Category Header */}
+                        <div className="flex items-center gap-3 mb-6">
+                            <span className="text-3xl">{category.emoji}</span>
+                            <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 font-[family-name:var(--font-heading)]">
+                                {category.name}
+                            </h2>
+                            <div className="flex-1 h-px bg-primary-200 ml-2" />
+                        </div>
+
+                        {/* Items Grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {category.items.map((item, idy) => (
+                                <div
+                                    key={idy}
+                                    className="bg-white rounded-2xl overflow-hidden border border-primary-100 hover:shadow-md transition-shadow group flex flex-col"
+                                >
+                                    {/* Image */}
+                                    <div className="relative h-44 sm:h-48 overflow-hidden bg-primary-50">
+                                        <img
+                                            src={item.image}
+                                            alt={item.name}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                            loading="lazy"
+                                        />
+                                        {item.tag && (
+                                            <div className={`absolute top-3 left-3 text-white text-[11px] font-bold px-2.5 py-1 rounded-full ${
+                                                item.tag === "Bestseller" ? "bg-primary-600" : "bg-neutral-700"
+                                            }`}>
+                                                {item.tag}
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {/* Info */}
+                                    <div className="p-4 flex flex-col flex-grow">
+                                        <div className="flex items-start justify-between gap-2 mb-1.5">
+                                            <h3 className="font-bold text-neutral-900 font-[family-name:var(--font-heading)] text-base leading-snug flex-1">
+                                                {item.name}
+                                            </h3>
+                                            <span className="text-primary-600 font-bold text-sm whitespace-nowrap">{item.price}</span>
+                                        </div>
+                                        <p className="text-neutral-500 text-sm leading-relaxed flex-grow">{item.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                ))}
+
+                {/* Order CTA */}
+                <div className="py-12 text-center border-t border-primary-200">
+                    <p className="text-neutral-500 mb-5 text-base">Can't make it to the cafe? Order your favorites online!</p>
+                    <a
+                        href="https://www.swiggy.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block px-8 py-3.5 bg-primary-600 hover:bg-primary-700 text-white font-bold text-sm tracking-wide rounded-full transition-colors"
+                    >
+                        Order on Swiggy
+                    </a>
+                </div>
+            </div>
         </main>
     );
 }

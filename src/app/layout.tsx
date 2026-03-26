@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased text-neutral-800 bg-background transition-colors duration-300`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased text-neutral-900 bg-[#fdf6e9]`}>
         <Navbar />
         {children}
         <Footer />
